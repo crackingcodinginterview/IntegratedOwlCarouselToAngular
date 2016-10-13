@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="testApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Carousel</title>
+    <link rel="stylesheet" href="OwlCarousel/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="OwlCarousel/owl-carousel/owl.theme.css">
+</head>
+<body data-ng-controller="testController">
+<div class="owl-carousel">
+    <a href="#" data-ng-repeat="image in images track by image.id"><img data-ng-src="{{image.url}}" /></a>
+</div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="OwlCarousel/owl-carousel/owl.carousel.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script>
+    'use strict';
+
+    var app = angular.module('testApp', []);
+    app.controller('testController', function($scope, $timeout){
+        $scope.images = [
+            {
+                id: 1,
+                url: 'images/2.png'
+            }, {
+                id: 2,
+                url: 'images/2.png'
+            }, {
+                id: 3,
+                url: 'images/2.png'
+            }, {
+                id: 4,
+                url: 'images/2.png'
+            }, {
+                id: 5,
+                url: 'images/2.png'
+            }, {
+                id: 6,
+                url: 'images/2.png'
+            }, {
+                id: 7,
+                url: 'images/2.png'
+            }, {
+                id: 8,
+                url: 'images/2.png'
+            }];
+        $timeout(function(){
+            $(".owl-carousel").owlCarousel();
+        });
+    });
+</script>
+</body>
+</html>
